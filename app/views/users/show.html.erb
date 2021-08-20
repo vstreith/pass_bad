@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= image_tag avatar_url(@user), class:"avatar-full" %>
+    <div class="panel panel-default">
+      <div class="panel-heading">Vérification</div>
+      <div class="panel-body">
+        E-mail : <%= @user.email %> <br>
+        Licence: <%= @user.licence_number %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h2><%= @user.fullname %></h2>
+    <div class="description row-space-3">
+      <%= @user.club %>
+    </div>
+  </div>
+</div>
