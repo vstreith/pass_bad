@@ -5,6 +5,6 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:fullname])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:fullname, :avatar, :licence_number, :club])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:fullname, :avatar, :licence_number, :club, :email, :password, :password_confirmation])
   end
 end
