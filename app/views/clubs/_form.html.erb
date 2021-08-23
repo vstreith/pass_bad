@@ -5,6 +5,8 @@
   <div class="panel-body">
     <div class="container">
       <%= form_for @club do |f| %>
+        <%= render 'shared/errors'%>
+        
           <div class="row">
             <div class="form-group">
               <label>Nom du club</label>
