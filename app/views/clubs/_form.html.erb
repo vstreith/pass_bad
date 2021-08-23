@@ -1,0 +1,109 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Devenez Club partenaire
+  </div>
+  <div class="panel-body">
+    <div class="container">
+      <%= form_for @club do |f| %>
+          <div class="row">
+            <div class="form-group">
+              <label>Nom du club</label>
+              <%= f.text_field :club_name, placeholder:"Nom du club", class:"form-control"%>
+            </div>
+          </div>
+          <div class="row">
+              <div class="form-group">
+                <label>Description du club</label>
+                <%= f.text_field :summary, placeholder:"Décrivez le club, l'ambiance, les membres,etc...", class:"form-control"%>
+              </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label>Adresse du club</label>
+              <%= f.text_field :address, placeholder:"Ou se trouve le club ? (Adresse de la salle)", class:"form-control"%>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label>Combien de terrains avez-vous dans votre salle ?</label>
+                 <%= f.select :court_number, [["1 terrain",1],["2 terrains",2],["3 terrains",3],["4 terrains",4],["5 terrains",5],["6 terrains",6],["7 terrains",7],["8 terrains",8]], prompt: "A sélectionner...", class:"form-control" %>
+              </div>
+            </div>
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label>Combien de personnes pouvez-vous accueillir provenant du site ?</label>
+                 <%= f.select :place_number, [["1",1],["2",2],["3",3],["4",4],["5",5],["6",6],["7",7],["8",8],["9",9],["10",10],["11",11],["12",12],["13",13],["14",14],["15",15],["16",16]], prompt: "A sélectionner...", class:"form-control" %>
+              </div>
+            </div>
+          </div>
+          <label>Quels sont les jours d'entraînements ?</label>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <%= f.check_box :training_monday%> Lundi
+              </div>
+              <div class="form-group">
+                <%= f.check_box :training_tuesday%> Mardi
+              </div>
+              <div class="form-group">
+                <%= f.check_box :training_wednesday%> Mercredi
+              </div>
+              <div class="form-group">
+                <%= f.check_box :training_thusday%> Jeudi
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <%= f.check_box :training_friday%> Vendredi
+              </div>
+              <div class="form-group">
+                <%= f.check_box :training_saturday%> Samedi
+              </div>
+              <div class="form-group">
+                <%= f.check_box :training_sunday%> Dimanche
+              </div>
+            </div>
+          </div>
+          <label>Ouvert aux classements :</label>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <%= f.check_box :player_ranking_n%> Joueur N
+              </div>
+              <div class="form-group">
+                <%= f.check_box :player_ranking_n%> Joueur R
+              </div>
+              <div class="form-group">
+                <%= f.check_box :player_ranking_n%> Joueur D
+              </div>
+              <div class="form-group">
+                <%= f.check_box :player_ranking_n%> Joueur P/NC
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Club affilié à la FFBaD?</label>
+                <br>
+                <%= f.check_box :ffbad_affiliated%> Club affilié
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Activé le club ?</label>
+                <br>
+                <%= f.check_box :active%> Activé
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit "Créer le club", class:"btn btn-primary"%>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

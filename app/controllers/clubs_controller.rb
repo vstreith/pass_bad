@@ -1,4 +1,4 @@
-class ClubController < ApplicationController
+class ClubsController < ApplicationController
 
 before_action :set_club, only: [:show, :edit, :update]
 before_action :authenticate_user!, except: [:show]
