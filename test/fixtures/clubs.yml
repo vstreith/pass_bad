@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  club_name: MyString
+  summary: MyText
+  court_number: 1
+  place_number: 1
+  training_monday: false
+  training_tuesday: false
+  training_wednesday: false
+  training_thusday: false
+  training_friday: false
+  training_saturday: false
+  training_sunday: false
+  player_ranking_n: false
+  player_ranking_r: false
+  player_ranking_d: false
+  player_ranking_pnc: false
+  is_coach: false
+  active: false
+  ffbad_affiliated: false
+  user: one
+
+two:
+  club_name: MyString
+  summary: MyText
+  court_number: 1
+  place_number: 1
+  training_monday: false
+  training_tuesday: false
+  training_wednesday: false
+  training_thusday: false
+  training_friday: false
+  training_saturday: false
+  training_sunday: false
+  player_ranking_n: false
+  player_ranking_r: false
+  player_ranking_d: false
+  player_ranking_pnc: false
+  is_coach: false
+  active: false
+  ffbad_affiliated: false
+  user: two

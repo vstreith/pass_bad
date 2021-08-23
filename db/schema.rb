@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_20_185649) do
+ActiveRecord::Schema.define(version: 2021_08_23_102201) do
+
+  create_table "clubs", force: :cascade do |t|
+    t.string "club_name"
+    t.text "summary"
+    t.integer "court_number"
+    t.integer "place_number"
+    t.boolean "training_monday"
+    t.boolean "training_tuesday"
+    t.boolean "training_wednesday"
+    t.boolean "training_thusday"
+    t.boolean "training_friday"
+    t.boolean "training_saturday"
+    t.boolean "training_sunday"
+    t.boolean "player_ranking_n"
+    t.boolean "player_ranking_r"
+    t.boolean "player_ranking_d"
+    t.boolean "player_ranking_pnc"
+    t.boolean "is_coach"
+    t.boolean "active"
+    t.boolean "ffbad_affiliated"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.index ["user_id"], name: "index_clubs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +58,5 @@ ActiveRecord::Schema.define(version: 2021_08_20_185649) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "clubs", "users"
 end
