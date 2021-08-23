@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_102201) do
+ActiveRecord::Schema.define(version: 2021_08_23_143501) do
 
   create_table "clubs", force: :cascade do |t|
     t.string "club_name"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 2021_08_23_102201) do
     t.index ["user_id"], name: "index_clubs_on_user_id"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.integer "club_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["club_id"], name: "index_photos_on_club_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -59,4 +70,5 @@ ActiveRecord::Schema.define(version: 2021_08_23_102201) do
   end
 
   add_foreign_key "clubs", "users"
+  add_foreign_key "photos", "clubs"
 end
