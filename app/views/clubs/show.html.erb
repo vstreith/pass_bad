@@ -188,11 +188,9 @@
                   });
                 }
               </script>
-
-              <script>
-                var GOOGLE_API_KEY="#{ENV['GOOGLE_API_KEY']}"
+              <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5D9Rwf6YGL6hzqhYfOj2JT0Ov-0hV6w0&callback=initMap">
               </script>
-              <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}&callback=initMap"%>
           </div>
       </div>
 
