@@ -1,0 +1,125 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <!-- Photo principale de l'annonce -->
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length >0 %>
+      </div>
+    </div>
+    <!-- Informations principales -->
+    <br>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <%= image_tag avatar_url(@club.user), class:"img-circle avatar-large" %>
+            <br>
+            <br>
+            <%= @club.user.fullname %>
+          </div>
+          <div class="col-md-9">
+            <h4><%= @club.club_name %></h4>
+            <%= @club.address %>
+            <div class="row text-center row-space-1">
+              <div class="col-sm-3">
+                <i class="fa fa-home fa-2x"></i>
+              </div>
+              <div class="col-sm-3">
+                <i class="fa fa-users fa-2x"></i>
+              </div>
+              <div class="col-sm-3">
+                <i class="fa fa-user fa-2x"></i>
+              </div>
+              <div class="col-sm-3">
+
+                <i class="<%= 'fa fa-check fa-2x' if @club.ffbad_affiliated %>"></i>
+                <i class="<%= 'fa fa-times fa-2x' if !@club.ffbad_affiliated %>"></i>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-sm-3">
+                <%= @club.court_number %> terrains
+              </div>
+              <div class="col-sm-3">
+                <%= @club.place_number %> places
+              </div>
+              <div class="col-sm-3">
+                <div class="<%= 'text-line-through' if !@club.is_coach %> ">Entraîneur</div>
+              </div>
+              <div class="col-sm-3">
+                <div class="<%= 'text-line-through' if !@club.ffbad_affiliated %> ">Affilié FFBaD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- Formulaire de réservation-->
+        </div>
+      </div>
+    </div>
+      <!-- Description -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>A propos de ce club</h2>
+        <p> <%= @club.summary %></p>
+        <hr>
+      </div>
+    </div>
+    <!-- Détails -->
+    <br>
+    <div class="row">
+      <div class="col-md-2">
+        <h4>Jours d'ouvertures</h4>
+      </div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="equipments">
+              <li class="<%= 'text-line-through' if !@club.training_monday%>">Lundi</li>
+              <li class="<%= 'text-line-through' if !@club.training_tuesday %>">Mardi</li>
+              <li class="<%= 'text-line-through' if !@club.training_wednesday %>">Mercredi</li>
+              <li class="<%= 'text-line-through' if !@club.training_thusday %>">Jeudi</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="equipments">
+
+              <li class="<%= 'text-line-through' if !@club.training_friday %>">Vendredi</li>
+              <li class="<%= 'text-line-through' if !@club.training_saturday %>">Samedi</li>
+              <li class="<%= 'text-line-through' if !@club.training_sunday %>">Dimanche</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 text-center">
+        <hr>
+        <h4>Ouverts aux joueurs classés :</h4>
+        <br>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3">
+            <ul class="equipments">
+              <li class="<%= 'text-line-through' if !@club.player_ranking_n%>">N1/N2/N3</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <ul class="equipments">
+              <li class="<%= 'text-line-through' if !@club.player_ranking_r%>">R4/R5/R6</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <ul class="equipments">
+              <li class="<%= 'text-line-through' if !@club.player_ranking_d%>">D7/D8/D9</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <ul class="equipments">
+              <li class="<%= 'text-line-through' if !@club.player_ranking_pnc%>">P10/P11/P12/NC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
