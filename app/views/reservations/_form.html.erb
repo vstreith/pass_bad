@@ -1,0 +1,9 @@
+<%= form_for([@club, @club.reservations.new]) do |f| %>
+
+  <%= f.text_field :play_date %>
+
+  <%= f.hidden_field :club_id, value: @club.id %>
+
+  <%= f.submit "Demande de réservation", class:"btn btn-primary" %>
+
+<% end %>
