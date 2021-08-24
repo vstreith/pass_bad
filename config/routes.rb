@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :users, only: [:show]
-  resources :clubs
+  resources :clubs do
+    resources :reservations, only: [:create]
+  end
   resources :photos
 end

@@ -1,6 +1,7 @@
 class Club < ApplicationRecord
   belongs_to :user
   has_many :photos
+  has_many :reservations
 
   validates :club_name, presence: true, length:{maximum: 75}
   validates :summary, presence:true, length: {maximum: 600}

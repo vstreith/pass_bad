@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  club: one
+  play_date: 2021-08-24 14:08:03
+
+two:
+  user: two
+  club: two
+  play_date: 2021-08-24 14:08:03

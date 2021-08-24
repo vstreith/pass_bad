@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_092330) do
+ActiveRecord::Schema.define(version: 2021_08_24_120803) do
 
   create_table "clubs", force: :cascade do |t|
     t.string "club_name"
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 2021_08_24_092330) do
     t.index ["club_id"], name: "index_photos_on_club_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "club_id", null: false
+    t.datetime "play_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_reservations_on_club_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -73,4 +83,6 @@ ActiveRecord::Schema.define(version: 2021_08_24_092330) do
 
   add_foreign_key "clubs", "users"
   add_foreign_key "photos", "clubs"
+  add_foreign_key "reservations", "clubs"
+  add_foreign_key "reservations", "users"
 end
