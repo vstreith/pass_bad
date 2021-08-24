@@ -31,6 +31,8 @@ gem 'font-awesome-sass'
 
 gem 'paperclip'
 
+gem 'geocoder'
+
 gem 'toastr-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
