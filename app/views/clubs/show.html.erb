@@ -1,18 +1,44 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <!-- Photo principale de l'annonce -->
-    <div class="row">
-      <div class="col-md-12">
-        <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length >0 %>
+    <!-- Google maps -->
+      <div class="row">
+          <div class="col-md-12">
+              <div id="map"></div>
+
+              <style>
+                 #map {
+                  height: 400px;
+                  width: 100%;
+                 }
+              </style>
+
+              <script>
+                function initMap() {
+                  var uluru = {lat:<%= @club.latitude %>, lng: <%= @club.longitude %>};
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: uluru
+                  });
+                  var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                  });
+                }
+              </script>
+
+              <script>
+                var GOOGLE_API_KEY="#{ENV['GOOGLE_API_KEY']}"
+              </script>
+             <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}&callback=initMap"%>
+          </div>
       </div>
-    </div>
     <!-- Informations principales -->
     <br>
     <div class="row">
       <div class="col-md-8">
         <div class="row">
           <div class="col-md-3 text-center">
-            <%= image_tag avatar_url(@club.user), class:"img-circle avatar-large" %>
+            <%= image_tag @photos[0].image.url(), class:"img-circle avatar-large" %>
             <br>
             <br>
             <%= @club.user.fullname %>
@@ -164,38 +190,7 @@
 
 <br>
 <hr>
-    <!-- Google maps -->
-      <div class="row">
-          <div class="col-md-12">
-              <div id="map"></div>
 
-              <style>
-                 #map {
-                  height: 400px;
-                  width: 100%;
-                 }
-              </style>
-
-              <script>
-                function initMap() {
-                  var uluru = {lat:<%= @club.latitude %>, lng: <%= @club.longitude %>};
-                  var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 15,
-                    center: uluru
-                  });
-                  var marker = new google.maps.Marker({
-                    position: uluru,
-                    map: map
-                  });
-                }
-              </script>
-
-              <script>
-                var GOOGLE_API_KEY="#{ENV['GOOGLE_API_KEY']}"
-              </script>
-             <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}&callback=initMap"%>
-          </div>
-      </div>
       <!-- Logements à proximité -->
      <h3>A proximité...</h3>
      <div class="row">
