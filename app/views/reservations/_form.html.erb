@@ -7,3 +7,13 @@
   <%= f.submit "Demande de réservation", class:"btn btn-primary" %>
 
 <% end %>
+
+<script>
+  $(function(){
+    $('#reservation_play_date').datepicker({
+      dateFormat: 'dd-mm-yy',
+      monthNames: ['Janvier', 'Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+      dayNamesMin: ['D','L','M','M','J','V','S']
+    });
+  })
+</script>
