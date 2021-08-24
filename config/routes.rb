@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :clubs
+  resources :photos
 end
