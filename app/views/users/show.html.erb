@@ -14,5 +14,22 @@
     <div class="description row-space-3">
       <%= @user.club %>
     </div>
+
+    <h4>Clubs (<%= @clubs.length %>)</h4><br>
+        <div class="row">
+            <% @clubs.each do |club| %>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading preview">
+                        <%= image_tag club.photos[0].image.url(:medium) if club.photos.length > 0 %>
+                    </div>
+                    <div class="panel-body">
+                        <%= link_to club.club_name, club %>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+
   </div>
 </div>
