@@ -1,35 +1,37 @@
 class PagesController < ApplicationController
 
   def home
+    @clubs = Club.order("RANDOM()").limit(3)
   end
 
   def search
     if params[:search].present? && params[:search].strip != ""
       session[:passbad_search] = params[:search]
     end
-  end
 
-  arrResult = Array.new
 
-  if session[:passbad_search] && session[:passbad_search] != ""
-    @clubs_address = Club.where(active: true).near(session[:passbad_search], 5, order:'distance')
-  else
-    @clubs_address = Club.where(active: true).all
-  end
+    arrResult = Array.new
 
-  @search = @clubs_address.ransack(params[:q])
-  @clubs = @search.result
+    if session[:passbad_search] && session[:passbad_search] != ""
+      @clubs_address = Club.where(active: true).near(session[:passbad_search], 5, order:'distance')
+    else
+      @clubs_address = Club.where(active: true).all
+    end
 
-  @arrClubs = @clubs.to_a
+    @search = @clubs_address.ransack(params[:q])
+    @clubs = @search.result
 
-  if(params[:play_date] && !params[:play_date].empty?)
-    play_date = Date.parse(params[:play_date])
+    @arrClubs = @clubs.to_a
 
-    @clubs.each do |club|
-      not_available = club.reservation.where("(? <= play_date AND play_date <= ?)", play_date).limit(1)
+    if(params[:play_date] && !params[:play_date].empty?)
+      play_date = Date.parse(params[:play_date])
 
-      if not_available.length > 0
-        @arrClubs.delete(club)
+      @clubs.each do |club|
+        not_available = club.reservation.where("(? <= play_date AND play_date <= ?)", play_date).limit(1)
+
+        if not_available.length > 0
+          @arrClubs.delete(club)
+        end
       end
     end
   end
