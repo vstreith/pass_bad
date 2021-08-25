@@ -37,6 +37,8 @@ gem 'figaro'
 
 gem 'jquery-ui-rails'
 
+gem 'ransack'
+
 gem 'toastr-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

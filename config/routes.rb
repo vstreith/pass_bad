@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   get '/preload' => 'reservations#preload'
   get 'your_inscriptions' => 'reservations#your_inscriptions'
   get 'your_reservations' => 'reservations#your_reservations'
+
+  get '/search' => 'pages#search'
+
 end
