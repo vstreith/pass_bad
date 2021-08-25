@@ -19,6 +19,10 @@ class ReservationsController < ApplicationController
     @inscriptions = current_user.reservations
   end
 
+  def your_reservations
+    @clubs = current_user.clubs
+  end
+
   private
   def reservation_params
     params.require(:reservation).permit(:play_date, :club_id)

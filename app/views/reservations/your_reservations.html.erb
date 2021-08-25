@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "Mon club", clubs_path, class:"sidebar-link" %></li>
+      <li class="sidebar-item"><%= link_to "Mes Réservations", your_reservations_path, class:"sidebar-link active" %></li>
+      <li class="sidebar-item"><%= link_to "Mes inscriptions", your_inscriptions_path, class:"sidebar-link" %></li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">Mes entraînements passés</div>
+      <div class="panel-body">
+        <% @clubs.each do |club| %>
+          <% club.reservations.order("id DESC").each do |reservation| %>
+            <div class="row">
+              <div class="col-md-2">
+                Le <%= reservation.play_date.strftime('%d.%m.%y') %>
+              </div>
+              <div class="col-md-6">
+                <%= link_to club_path(reservation.club) do %>
+                  <%= image_tag reservation.club.photos[0].image.url(:thumb) if reservation.club.photos.length <0 %>
+                <% end %>
+              </div>
+              <div class="col-md-2">
+                <%= link_to user_path(reservation.club.user) do %>
+                  <%= image_tag avatar_url(reservation.user), class:"img-circle avatar-medium" %>
+                <% end %>
+              </div>
+              <div class="col-md-2 right">
+                <p><%= reservation.club.club_name%></p>
+              </div>
+            </div>
+            <hr>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
