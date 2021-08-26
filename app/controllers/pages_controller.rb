@@ -27,7 +27,7 @@ class PagesController < ApplicationController
       play_date = Date.parse(params[:play_date])
 
       @clubs.each do |club|
-        not_available = club.reservation.where("(? <= play_date AND play_date <= ?)", play_date).limit(1)
+        not_available = club.reservations.where("(? <= play_date AND play_date <= ?)", play_date).limit(1)
 
         if not_available.length > 0
           @arrClubs.delete(club)

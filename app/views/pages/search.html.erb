@@ -26,9 +26,10 @@
           <% end %>
         }
       </script>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu8mJT0DytqjUtgcD4Hp6X75Phpgqy8AM&callback=initMap">
+      <script>
+        var GOOGLE_API_KEY="#{ENV['GOOGLE_API_KEY']}"
       </script>
+     <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}&callback=initMap"%>
     </div>
   </div>
   <div id="article">
