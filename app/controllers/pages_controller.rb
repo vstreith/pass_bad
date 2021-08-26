@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     arrResult = Array.new
 
     if session[:passbad_search] && session[:passbad_search] != ""
-      @clubs_address = Club.where(active: true).near(session[:passbad_search], 5, order:'distance')
+      @clubs_address = Club.where(active: true).near(session[:passbad_search], 40, order:'distance')
     else
       @clubs_address = Club.where(active: true).all
     end

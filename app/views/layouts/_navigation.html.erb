@@ -10,6 +10,14 @@
       <%= link_to 'PassBad', root_path, {:class=>"navbar-brand"} %>
     </div>
     <div class="navbar" class="navbar-collaspte collapse">
+
+      <%= form_tag search_path, class:"navbar-form navbar-left", method: :get do %>
+           <div class="search">
+             <span class="fa fa-search"></span>
+             <%= text_field_tag :search, params[:search], placeholder:"Rechercher", class:"form-control" %>
+           </div>
+         <% end %>
+
       <ul class="nav navbar-nav navbar-right">
 
         <li>
