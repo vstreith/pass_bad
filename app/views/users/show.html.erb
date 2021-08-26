@@ -11,8 +11,11 @@
     <div class="panel panel-default">
       <div class="panel-heading">Vérification</div>
       <div class="panel-body">
-        E-mail : <%= @user.email %> <br>
-        Licence: <%= @user.licence_number %>
+        <% if @user.confirmed_at %>
+          Email confirmé
+        <% else %>
+          Email non confirmé
+        <% end %>
       </div>
     </div>
   </div>

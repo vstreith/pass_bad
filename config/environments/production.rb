@@ -6,6 +6,9 @@ Rails.application.configure do
     })
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'lit-hamlet-43553.herokuapp.com', :protocol =>'https'}
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
