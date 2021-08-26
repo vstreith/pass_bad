@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   resources :photos
 
-  resources :conversations, only[:index, :create] do
+  resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
 

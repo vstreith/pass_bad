@@ -21,6 +21,7 @@ toastr.options = {
 }
 //= require jquery
 //= require jquery-ui
+//= require rails-timeago-all
 //= require bootstrap-sprockets
 //= require toastr
 // Uncomment to copy all static images under ../images to the output folder and reference

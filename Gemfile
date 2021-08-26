@@ -39,6 +39,8 @@ gem 'jquery-ui-rails'
 
 gem 'ransack'
 
+gem 'rails-timeago'
+
 gem 'toastr-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
