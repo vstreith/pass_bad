@@ -31,6 +31,8 @@ gem 'font-awesome-sass'
 
 gem 'paperclip'
 
+gem 'paperclip-cloudinary'
+
 gem 'geocoder'
 
 gem 'figaro'
