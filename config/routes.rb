@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   end
   resources :photos
 
+  resources :conversations, only[:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
+
   get '/preload' => 'reservations#preload'
   get 'your_inscriptions' => 'reservations#your_inscriptions'
   get 'your_reservations' => 'reservations#your_reservations'
