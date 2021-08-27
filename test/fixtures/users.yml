@@ -9,3 +9,11 @@ one: {}
 #
 two: {}
 # column: value
+# test/fixtures/users.yml
+premium_advocate:
+  premium_until: <%= DateTime.now + 1.month %>
+  # ...
+
+expired_advocate:
+  premium_until: <%= DateTime.now - 1.month %>
+  # ...

@@ -12,4 +12,13 @@ class User < ApplicationRecord
   has_many :clubs
   has_many :reservations
 
+  before_create :increment_premium
+
+  def increment_premium
+    if premium_until.nil? || (premium_until < Date.today)
+      self.premium_until = Date.today
+    end
+    self.premium_until += 1.month
+  end
+
 end

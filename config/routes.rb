@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'charges/new'
+  get 'charges/create'
   devise_for :users, :path=>'',
                     :path_names=>{:sign_in=>'login', :sign_out=>'logout', :edit=>'profile'},
                     :controllers=>{:registrations=>'registrations', :confirmations=>'confirmations'}
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create]
   end
   resources :photos
-
+  resources :charges, only: %i[new create]
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
