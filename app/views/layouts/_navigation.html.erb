@@ -1,22 +1,22 @@
 <nav class="navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-targer="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toogle navigation</span>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
       <%= link_to 'PassBad', root_path, {:class=>"navbar-brand"} %>
     </div>
-    <div class="navbar" class="navbar-collaspte collapse">
+    <div id="navbar" class="navbar-collapse collapse">
 
       <%= form_tag search_path, class:"navbar-form navbar-left", method: :get do %>
-           <div class="search">
-             <span class="fa fa-search"></span>
-             <%= text_field_tag :search, params[:search], placeholder:"Rechercher", class:"form-control" %>
-           </div>
-         <% end %>
+        <div class="search">
+          <span class="fa fa-search"></span>
+          <%= text_field_tag :search, params[:search], placeholder:"Rechercher", class:"form-control" %>
+        </div>
+      <% end %>
 
       <ul class="nav navbar-nav navbar-right">
 
@@ -36,9 +36,9 @@
         <li><%= link_to 'Inscription', new_user_registration_path %></li>
         <li><%= link_to 'Connexion', new_user_session_path %></li>
       <%else %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= image_tag avatar_url(current_user), class:"img-circle avatar-small"%> <%= current_user.fullname %> <span class="caret"></span></a>
-          <ul class="dropdown-menu">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag avatar_url(current_user), class:"img-circle avatar-small" %> <%= current_user.fullname %> <span class="caret"></span></a>
+        <ul class="dropdown-menu">
             <li><%= link_to 'Mes clubs', clubs_path %></li>
            <li><%= link_to 'Mes Réservations', your_reservations_path %></li>
            <li><%= link_to 'Mes Inscriptions', your_inscriptions_path %></li>
@@ -48,7 +48,7 @@
            <li><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %></li>
           </ul>
         </li>
-        <%end %>
+        <% end %>
       </ul>
     </div>
   </div>
