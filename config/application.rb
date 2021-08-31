@@ -11,7 +11,6 @@ module Workspace
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.i18n.default_locale = :fr
-    config.assets.initialize_on_precompile = false
     require Rails.root.join("lib/custom_public_exceptions")
     config.exceptions_app = CustomPublicExceptions.new(Rails.public_path)
     # Settings in config/environments/* take precedence over those specified here.
