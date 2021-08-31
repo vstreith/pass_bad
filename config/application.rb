@@ -9,10 +9,11 @@ Bundler.require(*Rails.groups)
 module PassBad
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.assets.initialize_on_precompile = false
     config.load_defaults 6.0
     config.i18n.default_locale = :fr
 
+    require Rails.root.join("lib/custom_public_exceptions")
+    config.exceptions_app = CustomPublicExceptions.new(Rails.public_path)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

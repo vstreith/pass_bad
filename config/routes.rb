@@ -28,4 +28,6 @@ Rails.application.routes.draw do
 
   get '/search' => 'pages#search'
 
+match "/404" => "errors#error404", via: [:get, :post, :patch, :delete]
+
 end
