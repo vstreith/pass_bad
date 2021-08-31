@@ -1,18 +1,13 @@
 # app/controllers/charges_controller.rb
 class ChargesController < ApplicationController
-  # display Stripe form to make a new payment
+  include StripeConcern
+  # ...
   def new; end
-
-  #  & check all data from Sripe
   def create
     # Amount in cents
     @amount = 500
 
-    # get customer from POST params
-    customer = Stripe::Customer.create(
-      email: params[:stripeEmail],
-      source: params[:stripeToken]
-    )
+    customer = create_or_retrieve_customer(current_user)
 
     begin
       charge = Stripe::Charge.create(

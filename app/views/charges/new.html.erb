@@ -2,9 +2,13 @@
 <h1>Souscrire à un abonnement mensuel</h1>
 <p>Actuellement, votre compte premium est disponible jusqu'au <%= current_user.premium_until.strftime('%d/%m/%Y') %></p>
 <%= form_tag charges_path do %>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.application.secrets.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
+  <% if current_user.stripe_token %>
+    <%= submit_tag 'Payer avec votre compte Stripe' %>
+  <% else %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.application.secrets.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="500"
+            data-locale="auto"></script>
+  <% end %>
 <% end %>

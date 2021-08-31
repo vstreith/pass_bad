@@ -1,0 +1,18 @@
+<!-- app/views/subscriptions/new.html.erb -->
+<h1>Souscrire à un abonnement mensuel</h1>
+<p>Abonner vous afin de recharger votre compte automatiquement tous les mois</p>
+<%= form_tag subscriptions_path do %>
+  <% if current_user.stripe_token %>
+    <p class="text-center">
+      <%= submit_tag t('premium.pay'), class: 'btn btn-primary btn-lg' %>
+    </p>
+  <% else %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.application.secrets.stripe[:publishable_key] %>"
+        data-image="<%= image_url 'favicon.ico' %>"
+        data-name="iSignif SAS"
+        data-description="Compte premium pendant un mois"
+        data-email="<%= current_user.email %>"
+        data-locale="auto"></script>
+  <% end %>
+<% end %>

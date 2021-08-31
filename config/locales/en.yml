@@ -11,8 +11,9 @@ fr:
             place_number:
   attributes:
     club:
+      one: "id_club"
       club_name: "Le nom du club"
-      address: "L'dresse"
+      address: "L'adresse"
       summary: "La description"
       court_number: "Le nombre de terrains"
       place_number: "Le nombre de places"

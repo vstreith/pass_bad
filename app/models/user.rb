@@ -1,6 +1,16 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  before_create :increment_premium
+
+  def increment_premium
+    if premium_until.nil? || (premium_until < Date.today)
+      self.premium_until = Date.today
+    end
+    self.premium_until += 1.month
+  end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
@@ -12,13 +22,6 @@ class User < ApplicationRecord
   has_many :clubs
   has_many :reservations
 
-  before_create :increment_premium
 
-  def increment_premium
-    if premium_until.nil? || (premium_until < Date.today)
-      self.premium_until = Date.today
-    end
-    self.premium_until += 1.month
-  end
 
 end

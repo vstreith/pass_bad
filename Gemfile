@@ -45,6 +45,8 @@ gem 'rails-timeago'
 
 gem 'stripe'
 
+gem 'activeadmin'
+
 gem 'toastr-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
