@@ -47,6 +47,8 @@ gem 'stripe'
 
 gem 'activeadmin'
 
+gem 'active_admin_theme'
+
 gem 'toastr-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
