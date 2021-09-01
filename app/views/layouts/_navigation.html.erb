@@ -21,8 +21,14 @@
       <ul class="nav navbar-nav navbar-right">
 
         <li>
+          <%= link_to root_path do %>
+          <i class="fa fa-home fa-lg"></i> Accueil
+          <% end %>
+        </li>
+
+        <li>
           <%= link_to new_club_path do %>
-            <i class="fa fa-home fa-lg"></i> Devenez club partenaire
+            <i class="fa fa-handshake fa-lg"></i> Devenez club partenaire
           <% end %>
         </li>
 
