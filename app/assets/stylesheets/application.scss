@@ -14,6 +14,9 @@ body {
 .container {
 	width: 80%;
 }
+.container-2 {
+  width: 100%;
+}
 
 .navbar-default {
   background-color: #FFFFFF;
@@ -260,19 +263,19 @@ input[type="checkbox"]:checked:before {
 }
 
 #sidebar {
-  float:right;
-  width:340px;
+  float:left;
+  width:100%;
 }
 
 #sidebar #widget {
-  width:340px;
-  height: 600px;
+  width:100%;
+  height: 450px;
   margin-bottom:10px;
   border-bottom:1px solid #ccc;
 }
 
 #article {
-  width:560px;
+  width:100%;
 }
 
 .search { position: relative; }

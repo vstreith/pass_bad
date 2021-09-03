@@ -14,7 +14,7 @@
           <% club.reservations.order("id DESC").each do |reservation| %>
             <div class="row">
               <div class="col-md-2">
-                Le <%= reservation.play_date.strftime('%d.%m.%y') %>
+                Le <%= reservation.play_date.strftime('%d.%m.%y') if reservation and reservation.play_date %>
               </div>
               <div class="col-md-6">
                 <%= link_to club_path(reservation.club) do %>

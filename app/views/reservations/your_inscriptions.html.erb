@@ -13,7 +13,7 @@
         <% @inscriptions.order("id DESC").each do |inscription| %>
           <div class="row">
             <div class="col-md-2">
-              Le <%= inscription.play_date.strftime('%d.%m.%y') %>
+              Le <%= inscription.play_date.strftime('%d.%m.%y') if inscription and inscription.play_date %>
             </div>
             <div class="col-md-6">
               <%= link_to club_path(inscription.club) do %>

@@ -100,12 +100,11 @@
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading preview">
-                <%= image_tag club.photos[0].image.url(:medium) if club.photos.length > 0 %>
+              <%= image_tag club.photos[0].image.url(:medium) if club.photos.length > 0 %>
             </div>
             <div class="panel-body">
               <p class="home-link"><b><%= link_to club.club_name, club_path(club) %></b></p>
               <p><%= link_to club.court_number, club_path(club) %> terrains </p>
-
             </div>
         </div>
     </div>

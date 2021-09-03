@@ -10,6 +10,15 @@ class ReservationsController < ApplicationController
     render json: reservations
   end
 
+  def preview
+      play_date = Date.parse(params[:play_date])
+      output = {
+          conflict: is_conflict(play_date)
+      }
+
+      render json: output
+  end
+
   def create
     @reservation = current_user.reservations.create(reservation_params)
     if @reservation.save
@@ -31,4 +40,9 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:play_date, :club_id)
   end
 
+  def is_conflict(play_date)
+     club = Club.find(params[:room_id])
+     check = club.reservations.where("? < play_date", play_date)
+     check.size > 0 ? true : false
+  end
 end
