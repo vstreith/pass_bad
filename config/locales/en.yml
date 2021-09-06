@@ -17,3 +17,5 @@ fr:
       summary: "La description"
       court_number: "Le nombre de terrains"
       place_number: "Le nombre de places"
+  premium:
+    pay: "S'abonner"
