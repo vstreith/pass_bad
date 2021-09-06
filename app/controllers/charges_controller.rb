@@ -2,7 +2,7 @@
 class ChargesController < ApplicationController
   include StripeConcern
   # ...
-  def new; end
+
   def create
     # Amount in cents
     @amount = 500
@@ -17,9 +17,10 @@ class ChargesController < ApplicationController
         currency: 'eur'
       )
       current_user.increment_premium
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to new_charge_path
+      current_user.save
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to new_charge_path
     end
   end
 end
