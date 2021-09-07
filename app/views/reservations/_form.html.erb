@@ -62,7 +62,23 @@
           dayNamesMin: ['D','L','M','M','J','V','S'],
           minDate: 0,
           maxDate: '3m',
-          beforeShowDay: unavailable
+          beforeShowDay: function(date) {
+            var day = date.getDay();
+            var day2 = date.getDay();
+            var day3 = date.getDay();
+            var day4 = date.getDay();
+            var day5 = date.getDay();
+            var day6 = date.getDay();
+            var day0 = date.getDay();
+            return [( <% if @club.training_monday %>( day = 1 )<% else %>( day != 1 )<% end %>
+            && <% if @club.training_tuesday %>(day2 = 2) <% else %> (day2 != 2) <% end %>
+            && <% if @club.training_wednesday %> (day3 = 3) <% else %> (day3 != 3) <% end %>
+            && <% if @club.training_thusday %> (day4 = 4) <% else %> (day4 != 4) <% end %>
+            && <% if @club.training_friday %> (day5 = 5) <% else %> (day5 != 5) <% end %>
+            && <% if @club.training_saturday %> (day6 = 6) <% else %> (day6 != 6) <% end %>
+            && <% if @club.training_sunday %> (day0 = 7) <% else %> (day0 != 7) <% end %>
+)];
+          }
         });
 
       }
