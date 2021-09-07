@@ -217,7 +217,12 @@ input[type="checkbox"]:checked:before {
 }
 
 .panel-heading.preview img{
-  width: 100%;
+    width: 100%;
+    display: block;
+    max-width:230px;
+    max-height:95px;
+    width: auto;
+    height: auto;
 }
 
 .equipments li{
