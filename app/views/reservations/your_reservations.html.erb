@@ -9,7 +9,7 @@
     </div>
     <div class="col-md-9">
       <div class="panel panel-default">
-        <div class="panel-heading">Mes entraînements passés</div>
+        <div class="panel-heading">Les réservations dans mon club</div>
         <div class="panel-body">
           <% @clubs.each do |club| %>
             <% club.reservations.order("id DESC").each do |reservation| %>
@@ -17,13 +17,16 @@
                 <div class="col-md-2">
                   Le <%= reservation.play_date.strftime('%d.%m.%y') if reservation and reservation.play_date %>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <%= link_to club_path(reservation.club) do %>
                     <%= image_tag reservation.club.photos[0].image.url(:thumb) if reservation.club.photos.length <0 %>
                   <% end %>
                 </div>
                 <div class="col-md-2">
-                  <%= link_to user_path(reservation.club.user) do %>
+                  <p><%= reservation.user.fullname%></p>
+                </div>
+                <div class="col-md-2">
+                  <%= link_to user_path(reservation.user) do %>
                     <%= image_tag avatar_url(reservation.user), class:"img-circle avatar-medium" %>
                   <% end %>
                 </div>

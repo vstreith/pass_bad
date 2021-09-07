@@ -352,3 +352,19 @@ padding:5px; /* amount of space between the text and the border of the button */
   padding: 10px;
   margin-bottom: 10px;
 }
+
+.banner {
+//  color: white;
+//  text-align: center;
+height:70vh;
+@media only screen and (max-width: 780px) {
+
+  height: auto;
+}
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+//  background-color: #F4F4F4;
+}

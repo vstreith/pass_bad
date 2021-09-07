@@ -16,10 +16,13 @@
               <div class="col-md-2">
                 Le <%= inscription.play_date.strftime('%d.%m.%y') if inscription and inscription.play_date %>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <%= link_to club_path(inscription.club) do %>
                   <%= image_tag inscription.club.photos[0].image.url(:thumb) if inscription.club.photos.length <0 %>
                 <% end %>
+              </div>
+              <div class="col-md-2">
+                <p><%= inscription.club.club_name%></p>
               </div>
               <div class="col-md-2">
                 <%= link_to user_path(inscription.club.user) do %>
