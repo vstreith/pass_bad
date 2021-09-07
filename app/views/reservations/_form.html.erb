@@ -76,7 +76,7 @@
             && <% if @club.training_thusday %> (day4 = 4) <% else %> (day4 != 4) <% end %>
             && <% if @club.training_friday %> (day5 = 5) <% else %> (day5 != 5) <% end %>
             && <% if @club.training_saturday %> (day6 = 6) <% else %> (day6 != 6) <% end %>
-            && <% if @club.training_sunday %> (day0 = 7) <% else %> (day0 != 7) <% end %>
+            && <% if @club.training_sunday %> (day0 = 7) <% else %> (day0 != 0) <% end %>
 )];
           }
         });
