@@ -1,36 +1,38 @@
-<div class="row">
-  <div class="col-md-3">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Mon club", clubs_path, class:"sidebar-link" %></li>
-      <li class="sidebar-item"><%= link_to "Mes Réservations", your_reservations_path, class:"sidebar-link" %></li>
-      <li class="sidebar-item"><%= link_to "Mes inscriptions", your_inscriptions_path, class:"sidebar-link active" %></li>
-    </ul>
-  </div>
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading">Mes inscriptions</div>
-      <div class="panel-body">
-        <% @inscriptions.order("id DESC").each do |inscription| %>
-          <div class="row">
-            <div class="col-md-2">
-              Le <%= inscription.play_date.strftime('%d.%m.%y') if inscription and inscription.play_date %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="sidebar-list">
+        <li class="sidebar-item"><%= link_to "Mon club", clubs_path, class:"sidebar-link" %></li>
+        <li class="sidebar-item"><%= link_to "Mes Réservations", your_reservations_path, class:"sidebar-link" %></li>
+        <li class="sidebar-item"><%= link_to "Mes inscriptions", your_inscriptions_path, class:"sidebar-link active" %></li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">Mes inscriptions</div>
+        <div class="panel-body">
+          <% @inscriptions.order("id DESC").each do |inscription| %>
+            <div class="row">
+              <div class="col-md-2">
+                Le <%= inscription.play_date.strftime('%d.%m.%y') if inscription and inscription.play_date %>
+              </div>
+              <div class="col-md-6">
+                <%= link_to club_path(inscription.club) do %>
+                  <%= image_tag inscription.club.photos[0].image.url(:thumb) if inscription.club.photos.length <0 %>
+                <% end %>
+              </div>
+              <div class="col-md-2">
+                <%= link_to user_path(inscription.club.user) do %>
+                  <%= image_tag avatar_url(inscription.club.user), class:"img-circle avatar-medium" %>
+                <% end %>
+              </div>
+              <div class="col-md-2 right">
+                <p><%= inscription.club.club_name%></p>
+              </div>
             </div>
-            <div class="col-md-6">
-              <%= link_to club_path(inscription.club) do %>
-                <%= image_tag inscription.club.photos[0].image.url(:thumb) if inscription.club.photos.length <0 %>
-              <% end %>
-            </div>
-            <div class="col-md-2">
-              <%= link_to user_path(inscription.club.user) do %>
-                <%= image_tag avatar_url(inscription.club.user), class:"img-circle avatar-medium" %>
-              <% end %>
-            </div>
-            <div class="col-md-2 right">
-              <p><%= inscription.club.club_name%></p>
-            </div>
-          </div>
-          <hr>
-        <% end %>
+            <hr>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

@@ -1,151 +1,156 @@
-<div class="row">
-  <div class="col-md-8">
-    <div class="text-center">
-      <h1>PassBad</h1>
-      <h3>Entraînez-vous partout, tout le temps !</h3>
-    </div>
-  </div>
-</div>
-
-<br>
-
-<%= form_tag search_path, method: :get do %>
+<div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <%= text_field_tag :search, params[:search], placeholder: "Où? Ville, Adresse, Région, etc...", class:"form-control"%>
+    <div class="col-md-8">
+      <div class="text-center">
+        <h1>PassBad</h1>
+        <h3>Entraînez-vous partout, tout le temps !</h3>
+      </div>
     </div>
-
-      <div class="col-md-1">
-          <%= check_box_tag "q[training_monday_eq]", true %> Lundi
-      </div>
-      <div class="col-md-1">
-          <%= check_box_tag "q[training_tuesday_eq]", true %> Mardi
-      </div>
-      <div class="col-md-1">
-          <%= check_box_tag "q[training_wednesday_eq]", true %> Mercredi
-      </div>
-      <div class="col-md-1">
-          <%= check_box_tag "q[training_thusday_eq]", true %> Jeudi
-      </div>
-      <div class="col-md-1">
-          <%= check_box_tag "q[training_friday_eq]", true %> Vendredi
-      </div>
-      <div class="col-md-1">
-          <%= check_box_tag "q[training_saturday_eq]", true %> Samedi
-      </div>
-      <div class="col-md-1">
-          <%= check_box_tag "q[training_sunday_eq]", true %> Dimanche
-      </div>
-      <div class="col-md-2">
-        <%= submit_tag "Rechercher", class: "btn btn-primary"%>
-      </div>
-  </div>
-<% end %>
-
-<br>
-<hr>
-<br>
-
-<div class="row">
-  <div class="col-md-12">
-    <div class="text-center">
-      <h3>Comment ça marche ?</h3>
-    </div>
-    <br>
   </div>
 
-
-  <div class="col-md-3">
-    <div class="text-center">
-        <div class="ccm">
-          <span class="fa fa-euro-sign"></span>
-          <h4>Adhérez</h4>
-          <p>Je souscris à un abonnement qui me permet de jouer dans tous les clubs partenaires de France</p>
+  <%= form_tag search_path, method: :get do %>
+    <div class="row">
+        <div class="col-md-8">
+          <%= text_field_tag :search, params[:search], placeholder: "Où? Ville, Adresse, Région, etc...", class:"form-control"%>
+        </div>
+        <div class="col-md-4">
+          <%= submit_tag "Rechercher", class: "btn btn-primary"%>
         </div>
     </div>
-  </div>
-  <div class="col-md-3">
-    <div class="text-center">
-      <div class="ccm">
-        <span class="fa fa-search"></span>
-        <h4>Recherchez</h4>
-        <p>Je cherche un club dans lequel jouer, près de chez moi, en vacances, en déplacement...</p>
-      </div>
+    <br>
+    <div class="row">
+
+        <div class="col-md-1">
+            <%= check_box_tag "q[training_monday_eq]", true %> Lundi
+        </div>
+        <div class="col-md-1">
+            <%= check_box_tag "q[training_tuesday_eq]", true %> Mardi
+        </div>
+        <div class="col-md-1">
+            <%= check_box_tag "q[training_wednesday_eq]", true %> Mercredi
+        </div>
+        <div class="col-md-1">
+            <%= check_box_tag "q[training_thusday_eq]", true %> Jeudi
+        </div>
+        <div class="col-md-1">
+            <%= check_box_tag "q[training_friday_eq]", true %> Vendredi
+        </div>
+        <div class="col-md-1">
+            <%= check_box_tag "q[training_saturday_eq]", true %> Samedi
+        </div>
+        <div class="col-md-1">
+            <%= check_box_tag "q[training_sunday_eq]", true %> Dimanche
+        </div>
     </div>
-  </div>
-  <div class="col-md-3">
-    <div class="text-center">
-      <div class="ccm">
-        <span class="fa fa-check"></span>
-        <h4>Réservez</h4>
-        <p>Je vérifie la disponibilité et je réserve ma place dans le club de mon choix.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="text-center">
-      <div class="ccm">
-        <span class="fa fa-running"></span>
-        <h4>Jouez !</h4>
-        <p>Tout est prêt pour aller jouer et rencontrer de nouvelles personnes!</p>
-      </div>
-    </div>
-  </div>
-</div>
+  <% end %>
 
 <br>
 <hr>
 <br>
 
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
       <div class="text-center">
-        <div class="col-md-12">
-        <div class="panel panel-default">
-          <h3>Notre abonnement</h3>
-            <div class="panel-heading preview">
-              </div>
-              <div class="panel-body">
-                <p>Un abonnement unique, pour jouer partout, tout le temps! L'abonnement comprend un accès aux créneaux d'entraînements de nos différents clubs partenaires.
-                L'abonnement est valable 1 an à compter de la date de paiement. Pour vous inscrire dans un club affilié à la fédération française de Badminton, vous devez renseigner votre numéro de licence dans votre fiche profil.
-               N'hésitez pas à contacter notre support en cas de problème à l'adresse suivante : support@passbad.com </p>
-                <p>Prix :  <b>72€</b></p>
-                <br>
-                <div class="col-md-12">
-                    <%= submit_tag "S'abonner", class: "btn btn-primary"%>
+        <h3>Comment ça marche ?</h3>
+      </div>
+      <br>
+    </div>
+
+
+    <div class="col-md-3">
+      <div class="text-center">
+          <div class="ccm">
+            <span class="fa fa-euro-sign"></span>
+            <h4>Adhérez</h4>
+            <p>Je souscris à un abonnement qui me permet de jouer dans tous les clubs partenaires de France</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="text-center">
+        <div class="ccm">
+          <span class="fa fa-search"></span>
+          <h4>Recherchez</h4>
+          <p>Je cherche un club dans lequel jouer, près de chez moi, en vacances, en déplacement...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="text-center">
+        <div class="ccm">
+          <span class="fa fa-check"></span>
+          <h4>Réservez</h4>
+          <p>Je vérifie la disponibilité et je réserve ma place dans le club de mon choix.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="text-center">
+        <div class="ccm">
+          <span class="fa fa-running"></span>
+          <h4>Jouez !</h4>
+          <p>Tout est prêt pour aller jouer et rencontrer de nouvelles personnes!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+
+      <div class="row">
+        <div class="text-center">
+          <div class="col-md-12">
+          <div class="panel panel-default">
+            <h3>Notre abonnement</h3>
+              <div class="panel-heading preview">
+                </div>
+                <div class="panel-body">
+                  <p>Un abonnement unique, pour jouer partout, tout le temps! L'abonnement comprend un accès aux créneaux d'entraînements de nos différents clubs partenaires.
+                  L'abonnement est valable 1 an à compter de la date de paiement. Pour vous inscrire dans un club affilié à la fédération française de Badminton, vous devez renseigner votre numéro de licence dans votre fiche profil.
+                 N'hésitez pas à contacter notre support en cas de problème à l'adresse suivante : support@passbad.com </p>
+                  <p>Prix :  <b>72€</b></p>
+                  <br>
+                  <div class="col-md-12">
+                      <%= submit_tag "S'abonner", class: "btn btn-primary"%>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+      </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4>Clubs</h4>
     </div>
-</div>
-
-
-<br>
-<hr>
-<br>
-
-<div class="row">
-  <div class="col-md-4">
-    <h4>Clubs</h4>
+  </div>
+  <div class="row">
+      <% @clubs.each do |club| %>
+      <div class="col-md-4">
+          <div class="panel panel-default">
+              <div class="panel-heading preview">
+                <%= image_tag club.photos[0].image.url(:medium) if club.photos.length > 0 %>
+              </div>
+              <div class="panel-body">
+                <p class="home-link"><b><%= link_to club.club_name, club_path(club) %></b></p>
+                <p><%= link_to club.court_number, club_path(club) %> terrains </p>
+              </div>
+          </div>
+      </div>
+      <% end %>
   </div>
 </div>
-<div class="row">
-    <% @clubs.each do |club| %>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading preview">
-              <%= image_tag club.photos[0].image.url(:medium) if club.photos.length > 0 %>
-            </div>
-            <div class="panel-body">
-              <p class="home-link"><b><%= link_to club.club_name, club_path(club) %></b></p>
-              <p><%= link_to club.court_number, club_path(club) %> terrains </p>
-            </div>
-        </div>
-    </div>
-    <% end %>
 </div>
+
+
 
 <script>
 

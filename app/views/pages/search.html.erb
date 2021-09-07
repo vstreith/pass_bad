@@ -36,125 +36,128 @@
     </div>
   </div>
   <div class="col-md-6">
+    <br>
     <div id="article">
-      <div class="row">
-        <div class="col-md-12">
-          <%= search_form_for @search, url: search_path do |f| %>
-            <div class="row">
-              <div class="col-md-3">
-                <%= text_field_tag :play_date, params[:play_date], placeholder: "Date", class:"form-control" %>
-              </div>
-              <div class="col-md-9">
-              <%= text_field_tag :search, params[:search], placeholder: "Où? Ville, Adresse, Région, etc...", class:"form-control"%>
-              </div>
-            </div>
-            <hr>
-            <!-- <div class="row">
-              <div class="col-md-4 select">
-                  <div class="form-group">
-                      <label>Terrains ?</label>
-                      <%= f.select :court_number_gteq, [["1 terrain",1],["2 terrains",2],
-                      ["3 terrains",3], ["4 terrains",4] ,["5 terrains",5],
-                      ["6 terrains",6]], prompt:"A sélectionner...",
-                      class:"form-control" %>
-                  </div>
-              </div>
-
-              <div class="col-md-4 select">
-                  <div class="form-group">
-                      <label>Nombre de places ?</label>
-                      <%= f.select :place_number_gteq, [["1",1],["2",2],
-                      ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8]],prompt:"A sélectionner...",
-                      class:"form-control" %>
-                  </div>
-              </div>
-          </div> -->
-          <hr>
-          <div class="row">
-            <p>Je souhaite m'entraîner les ..</p>
-            <div class="col-md-4">
-                <%= check_box_tag "q[training_monday_eq]", true %> Lundi
-            </div>
-            <div class="col-md-4">
-                <%= check_box_tag "q[training_tuesday_eq]", true %> Mardi
-            </div>
-            <div class="col-md-4">
-                <%= check_box_tag "q[training_wednesday_eq]", true %> Mercredi
-            </div>
-            <div class="col-md-4">
-                <%= check_box_tag "q[training_thusday_eq]", true %> Jeudi
-            </div>
-            <div class="col-md-4">
-                <%= check_box_tag "q[training_friday_eq]", true %> Vendredi
-            </div>
-            <div class="col-md-4">
-                <%= check_box_tag "q[training_saturday_eq]", true %> Samedi
-            </div>
-            <div class="col-md-4">
-                <%= check_box_tag "q[training_sunday_eq]", true %> Dimanche
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-          <p>Je voudrais rencontrer des joueurs de classements..</p>
-          <div class="col-md-6">
-            <%= check_box_tag "q[player_ranking_n_eq]", true %> Joueur N
-          </div>
-          <div class="col-md-6">
-            <%= check_box_tag "q[player_ranking_r_eq]", true %> Joueur R
-          </div>
-          <div class="col-md-6">
-            <%= check_box_tag "q[player_ranking_d_eq]", true %> Joueur D
-          </div>
-          <div class="col-md-6">
-            <%= check_box_tag "q[player_ranking_pnc_eq]", true %> Joueur P/NC
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-4">
-            <%= check_box_tag "q[ffbad_affiliated_eq]", true %> Club affilié à la FFBaD
-          </div>
-          <div class="col-md-4">
-            <%= check_box_tag "q[is_coach_eq]", true %> Avec Entraîneur
-          </div>
-        </div>
-        <br>
         <div class="row">
           <div class="col-md-12">
-            <%= f.submit "Rechercher", class:"btn btn-primary" %>
+            <%= search_form_for @search, url: search_path do |f| %>
+              <div class="row">
+                <div class="col-md-3">
+                  <%= text_field_tag :play_date, params[:play_date], placeholder: "Date", class:"form-control" %>
+                </div>
+                <div class="col-md-9">
+                <%= text_field_tag :search, params[:search], placeholder: "Où? Ville, Adresse, Région, etc...", class:"form-control"%>
+                </div>
+              </div>
+              <hr>
+              <!-- <div class="row">
+                <div class="col-md-4 select">
+                    <div class="form-group">
+                        <label>Terrains ?</label>
+                        <%= f.select :court_number_gteq, [["1 terrain",1],["2 terrains",2],
+                        ["3 terrains",3], ["4 terrains",4] ,["5 terrains",5],
+                        ["6 terrains",6]], prompt:"A sélectionner...",
+                        class:"form-control" %>
+                    </div>
+                </div>
+
+                <div class="col-md-4 select">
+                    <div class="form-group">
+                        <label>Nombre de places ?</label>
+                        <%= f.select :place_number_gteq, [["1",1],["2",2],
+                        ["3",3], ["4",4], ["5",5], ["6",6], ["7",7], ["8",8]],prompt:"A sélectionner...",
+                        class:"form-control" %>
+                    </div>
+                </div>
+            </div> -->
+            <hr>
+            <div class="row">
+              <p>Je souhaite m'entraîner les ..</p>
+              <div class="col-md-4">
+                  <%= check_box_tag "q[training_monday_eq]", true %> Lundi
+              </div>
+              <div class="col-md-4">
+                  <%= check_box_tag "q[training_tuesday_eq]", true %> Mardi
+              </div>
+              <div class="col-md-4">
+                  <%= check_box_tag "q[training_wednesday_eq]", true %> Mercredi
+              </div>
+              <div class="col-md-4">
+                  <%= check_box_tag "q[training_thusday_eq]", true %> Jeudi
+              </div>
+              <div class="col-md-4">
+                  <%= check_box_tag "q[training_friday_eq]", true %> Vendredi
+              </div>
+              <div class="col-md-4">
+                  <%= check_box_tag "q[training_saturday_eq]", true %> Samedi
+              </div>
+              <div class="col-md-4">
+                  <%= check_box_tag "q[training_sunday_eq]", true %> Dimanche
+              </div>
           </div>
+          <hr>
+          <div class="row">
+            <p>Je voudrais rencontrer des joueurs de classements..</p>
+            <div class="col-md-6">
+              <%= check_box_tag "q[player_ranking_n_eq]", true %> Joueur N
+            </div>
+            <div class="col-md-6">
+              <%= check_box_tag "q[player_ranking_r_eq]", true %> Joueur R
+            </div>
+            <div class="col-md-6">
+              <%= check_box_tag "q[player_ranking_d_eq]", true %> Joueur D
+            </div>
+            <div class="col-md-6">
+              <%= check_box_tag "q[player_ranking_pnc_eq]", true %> Joueur P/NC
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <%= check_box_tag "q[ffbad_affiliated_eq]", true %> Club affilié à la FFBaD
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[is_coach_eq]", true %> Avec Entraîneur
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.submit "Rechercher", class:"btn btn-primary" %>
+            </div>
+          </div>
+            <% end %>
         </div>
-          <% end %>
       </div>
+    </div>
+    <hr>
+    <div class="row">
+      <% if @arrClubs.empty? %>
+        Aucun résultat ne correspond à votre recherche.
+      <% else %>
+        <% @arrClubs.each_slice(1) do |group| %>
+        <div class="col-md-3">
+          <% group.each do |club| %>
+            <div class="panel panel-default">
+                <div class="panel-heading preview">
+                    <%= image_tag club.photos[0].image.url(:medium) if club.photos.length > 0 %>
+                </div>
+                <div class="panel-body">
+                  <%= image_tag avatar_url(club.user), class:"img-circle avatar-small" %>
+                    <%= link_to club.club_name, club %>
+                </div>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
-</div>
 
-          <hr>
 
-<div class="row">
-  <% if @arrClubs.empty? %>
-    Aucun résultat ne correspond à votre recherche.
-  <% else %>
-    <% @arrClubs.each_slice(1) do |group| %>
-    <div class="col-md-3">
-      <% group.each do |club| %>
-        <div class="panel panel-default">
-            <div class="panel-heading preview">
-                <%= image_tag club.photos[0].image.url(:medium) if club.photos.length > 0 %>
-            </div>
-            <div class="panel-body">
-              <%= image_tag avatar_url(club.user), class:"img-circle avatar-small" %>
-                <%= link_to club.club_name, club %>
-            </div>
-        </div>
-      <% end %>
-    </div>
-    <% end %>
-  <% end %>
-</div>
+
+
 
 <script>
 

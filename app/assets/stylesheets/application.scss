@@ -13,10 +13,17 @@ body {
 
 .container {
 	width: 80%;
+
+}
+
+.container-fluid {
+  width: 100%;
+
 }
 
 .navbar-default {
   background-color: #FFFFFF;
+  margin-bottom: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -266,7 +273,7 @@ input[type="checkbox"]:checked:before {
 
 #sidebar #widget {
   width:100%;
-  height: 450px;
+  height: 100vh;
   margin-bottom:10px;
   border-bottom:1px solid #ccc;
 }
