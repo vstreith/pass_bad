@@ -96,60 +96,63 @@
       <!-- Détails -->
       <br>
       <div class="row">
-        <div class="col-md-2">
-          <h4>Jours d'ouvertures</h4>
-        </div>
-        <div class="col-md-10">
-          <div class="row">
-            <div class="col-md-6">
-              <ul class="equipments">
-                <li class="<%= 'text-line-through' if !@club.training_monday%>">Lundi</li>
-                <li class="<%= 'text-line-through' if !@club.training_tuesday %>">Mardi</li>
-                <li class="<%= 'text-line-through' if !@club.training_wednesday %>">Mercredi</li>
-                <li class="<%= 'text-line-through' if !@club.training_thusday %>">Jeudi</li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <ul class="equipments">
+        <div class="col-md-6">
 
-                <li class="<%= 'text-line-through' if !@club.training_friday %>">Vendredi</li>
-                <li class="<%= 'text-line-through' if !@club.training_saturday %>">Samedi</li>
-                <li class="<%= 'text-line-through' if !@club.training_sunday %>">Dimanche</li>
+            <h4>Jours d'ouvertures :</h4>
+            <br>
+
+            <div class="col-md-4">
+              <div class="text-center">
+                <ul class="equipments">
+                  <% if @club.training_monday%>
+                  <li>Lundi</li>
+                  <% end %>
+                  <% if @club.training_tuesday%>
+                  <li>Mardi</li>
+                  <% end %>
+                  <% if @club.training_wednesday%>
+                  <li>Mercredi</li>
+                  <% end %>
+                  <% if @club.training_thusday%>
+                  <li>Jeudi</li>
+                  <% end %>
+                  <% if @club.training_friday%>
+                  <li>Vendredi</li>
+                  <% end %>
+                  <% if @club.training_saturday%>
+                  <li>Samedi</li>
+                  <% end %>
+                  <% if @club.training_sunday%>
+                  <li>Dimanche</li>
+                  <% end %>
+                </ul>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+            <h4>Ouverts aux joueurs classés :</h4>
+            <br>
+
+            <div class="col-md-4">
+              <ul class="equipments">
+                <% if @club.player_ranking_n%>
+                <li>N1 N2 N3</li>
+                <% end %>
+                <% if @club.player_ranking_r%>
+                <li>R4 R5 R6</li>
+                <% end %>
+                <% if @club.player_ranking_d%>
+                <li>D7 D8 D9</li>
+                <% end %>
+                <% if @club.player_ranking_pnc%>
+                <li>P10 P11 P12</li>
+                <% end %>
+
               </ul>
             </div>
           </div>
-        </div>
-        <div class="col-md-12 text-center">
-          <hr>
-          <h4>Ouverts aux joueurs classés :</h4>
-          <br>
-        </div>
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-3">
-              <ul class="equipments">
-                <li class="<%= 'text-line-through' if !@club.player_ranking_n%>">N1/N2/N3</li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <ul class="equipments">
-                <li class="<%= 'text-line-through' if !@club.player_ranking_r%>">R4/R5/R6</li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <ul class="equipments">
-                <li class="<%= 'text-line-through' if !@club.player_ranking_d%>">D7/D8/D9</li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <ul class="equipments">
-                <li class="<%= 'text-line-through' if !@club.player_ranking_pnc%>">P10/P11/P12/NC</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
-
       <br>
       <hr>
       <!-- Carousel -->
@@ -209,7 +212,5 @@
            </div>
            <% end %>
        </div>
-
-    </div>
   </div>
 </div>

@@ -245,8 +245,13 @@ input[type="checkbox"]:checked:before {
 }
 
 .equipments li{
+  border: 1px solid #6BA065;
+  border-radius: 32px;
+  font-weight: bold;
+  background-color: #6BA065;
+  color: #fff;
+  padding: 10px 25px 10px 25px;
   margin-bottom: 10px;
-  list-style-type: none;
 }
 .text-line-through{
   text-decoration: line-through;
