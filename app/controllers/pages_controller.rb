@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @clubs = Club.order("RANDOM()").limit(3)
+    @clubs = Club.order("RANDOM()").limit(100)
   end
 
   def search

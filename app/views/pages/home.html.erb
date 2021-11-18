@@ -1,28 +1,29 @@
 <div class="container-fluid">
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(244, 244, 244, 0.6) 0%, rgba(244, 244, 240, 0.6) 50%), url('<%= image_path "bad1.jpg" %>');">
-    <div class="row">
-      <div class="col-md-8">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(244, 244, 244, 0.6) 0%, rgba(244, 244, 240, 0.6) 50%), url('<%= image_path "bad4.jpg" %>');">
+    <%= form_tag search_path, method: :get do %>
+
+      <div class="row">
         <div class="text-center">
-          <h1>PassBad</h1>
-          <h3>Entraînez-vous partout, tout le temps !</h3>
+          <div class="col-md-12">
+                        <%= image_tag "LOGO_PASS_BAD_FINAL_NOIR_TRANSPARENCE.png", class: "logo_header" %>
+          </div>
+            <div class="col-md-8">
+                <%= text_field_tag :search, params[:search], placeholder: "Où? Ville, Adresse, Région, etc...", class:"form-control"%>
+            </div>
+            <div class="col-md-4">
+              <%= submit_tag "Rechercher", class: "btn btn-primary"%>
+            </div>
         </div>
-      </div>
     </div>
 
-    <%= form_tag search_path, method: :get do %>
-      <div class="row">
-          <div class="col-md-8">
-            <%= text_field_tag :search, params[:search], placeholder: "Où? Ville, Adresse, Région, etc...", class:"form-control"%>
-          </div>
-          <div class="col-md-4">
-            <%= submit_tag "Rechercher", class: "btn btn-primary"%>
-          </div>
-      </div>
       <br>
       <div class="row">
         <div class="text-center">
+          <div class="search_bar">
           <div class="col-md-1">
+
               <%= check_box_tag "q[training_monday_eq]", true %> Lundi
+
           </div>
           <div class="col-md-1">
               <%= check_box_tag "q[training_tuesday_eq]", true %> Mardi
@@ -41,6 +42,7 @@
           </div>
           <div class="col-md-1">
               <%= check_box_tag "q[training_sunday_eq]", true %> Dimanche
+          </div>
           </div>
         </div>
 
@@ -133,13 +135,13 @@
   <br>
 
   <div class="row">
-    <div class="col-md-4">
-      <h4>Clubs</h4>
-    </div>
+      <div class="text-center">
+        <h3>Nos Clubs partenaires :</h3>
+      </div>
   </div>
   <div class="row">
       <% @clubs.each do |club| %>
-      <div class="col-md-4">
+      <div class="col-md-3">
           <div class="panel panel-default">
               <div class="panel-heading preview">
                 <%= image_tag club.photos[0].image.url(:medium) if club.photos.length > 0 %>
