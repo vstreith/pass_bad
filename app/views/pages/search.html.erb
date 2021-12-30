@@ -5,6 +5,7 @@
       <div id="widget">
         <script>
           function initMap() {
+
             <% if @arrClubs.length > 0 %>
                 var uluru = {lat: <%= @arrClubs[0].latitude %>, lng: <%= @arrClubs[0].longitude %>};
                 var map = new google.maps.Map(document.getElementById('widget'), {
@@ -20,15 +21,31 @@
             <% end %>
 
             <% @arrClubs.each do |club| %>
+
             var marker = new google.maps.Marker({
               position: {lat: <%= club.latitude %>, lng: <%= club.longitude %>},
               map: map,
+              clickable: true,
               title: "<%= club.club_name %>"
             });
 
+            marker.info = new google.maps.InfoWindow({
+              content: '<%= link_to club.club_name, club %><br><%= club.address%>',
+            });
+
+             google.maps.event.addListener(marker, 'click', function() {
+                 // this = marker
+                 var marker_map = this.getMap();
+                 this.info.open(marker_map, this);
+                 // this.info.open(marker_map, this);
+                 // Note: If you call open() without passing a marker, the InfoWindow will use the position specified upon construction through the InfoWindowOptions object literal.
+             });
+
             <% end %>
+
           }
         </script>
+
         <script>
           var GOOGLE_API_KEY="#{ENV['GOOGLE_API_KEY']}"
         </script>

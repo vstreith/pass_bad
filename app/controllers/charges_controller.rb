@@ -5,7 +5,7 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 500
+    @amount = 7200
 
     customer = create_or_retrieve_customer(current_user)
 

@@ -9,8 +9,7 @@
 
 body {
   color: #484848;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: sans-serif;
 }
 
 .container {
@@ -34,7 +33,7 @@ body {
 
 .container-fluid {
   width: 100%;
-
+  padding : 0px;
 }
 
 .navbar-default {
@@ -233,6 +232,7 @@ input[type="checkbox"]:checked:before {
 
 .panel-heading.preview {
   padding: 0;
+  width: 100%;
 }
 
 .panel-heading.preview img{
