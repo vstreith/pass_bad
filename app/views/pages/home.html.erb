@@ -7,11 +7,13 @@
           <div class="col-md-12">
             <%= image_tag "LOGO_PASS_BAD_FINAL_NOIR_TRANSPARENCE.png", class: "logo_header" %>
           </div>
-            <div class="col-md-8">
+            <div class="col-md-12">
+              <div class="col-md-8">
                 <%= text_field_tag :search, params[:search], placeholder: "Où? Ville, Adresse, Région, etc...", class:"form-control"%>
-            </div>
-            <div class="col-md-4">
-              <%= submit_tag "Rechercher", class: "btn btn-primary"%>
+              </div>
+                <div class="col-md-4">
+                  <%= submit_tag "Rechercher", class: "btn btn-primary"%>
+                </div>                
             </div>
         </div>
     </div>

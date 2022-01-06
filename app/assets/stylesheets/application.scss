@@ -39,6 +39,7 @@ body {
 .navbar-default {
   background-color: #242422;
   margin-bottom: 0px;
+  border: none;
 }
 
 .navbar-default .navbar-brand {
@@ -381,10 +382,11 @@ padding:5px; /* amount of space between the text and the border of the button */
 //  color: white;
 //  text-align: center;
 height:100vh;
-/*@media only screen and (max-width: 780px) {
-
-  height: auto;
-} */
+@media only screen and (max-width: 991px) {
+  .btn-primary.btn {
+    margin-top: 10px;
+  }
+}
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
