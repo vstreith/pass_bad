@@ -50,6 +50,8 @@ gem 'activeadmin'
 gem 'active_admin_theme'
 
 gem 'toastr-rails'
+
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
