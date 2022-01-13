@@ -1,2 +1,7 @@
 # config/initializers/stripe.rb
-Stripe.api_key = Rails.application.credentials[:stripe][:secret_key]
+Rails.configuration.stripe = {
+  publishable_key: Rails.application.secrets.stripe[:publishable_key],
+  secret_key: Rails.application.secrets.stripe[:secret_key]
+}
+
+Stripe.api_key = Rails.application.secrets.stripe[:secret_key]
